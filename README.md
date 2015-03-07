@@ -16,5 +16,5 @@ Dependencies
 
 iOS Binary Analyzer depends on the _otool_ command thus make sure that it is installed.
 
-Using Cydia, _otool_ can be found on the following package: [Darwin CC Tools](http://apt.thebigboss.org/onepackage.php?bundleid=org.coolstar.cctools)
+Using Cydia, _otool_ can be found in the following package: [Darwin CC Tools](http://apt.thebigboss.org/onepackage.php?bundleid=org.coolstar.cctools)
 
