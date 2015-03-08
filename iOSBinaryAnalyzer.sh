@@ -100,7 +100,7 @@ do
                 echo " Automatic Reference Counting (ARC) enabled?   Yes"
         fi
 
-        details="$details\n $ otool -l -arch $a <target> | grep cryptid\n$encrypt\n\n $ otool -hV -arch $a <target> | grep PIE\n$pie\n\n $ otool -IV -arch $a <target> | grep stack\n$canaries\n\n $ otool -IV -arch $a <target> | grep _objc_release\n$arc\n\n ::::::::::::\n"
+        details="$details\n $ otool -l -arch $a '$1' | grep cryptid\n$encrypt\n\n $ otool -hV -arch $a '$1' | grep PIE\n$pie\n\n $ otool -IV -arch $a '$1' | grep stack\n$canaries\n\n $ otool -IV -arch $a '$1' | grep _objc_release\n$arc\n\n ::::::::::::\n"
 done
 
 echo ""
