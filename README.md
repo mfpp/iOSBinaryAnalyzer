@@ -7,7 +7,7 @@ Checks
 ------
 
 * Encryption;
-* PIE (Position-Independent Executable);
+* PIE (Position Independent Executable);
 * Stack Smashing Protection;
 * Automatic Reference Counting (ARC).
 
@@ -19,4 +19,3 @@ iOS Binary Analyzer depends on the _otool_ command, thus make sure that it is in
 Using Cydia, _otool_ can be found in the following package:
 
 * [Darwin CC Tools](http://apt.thebigboss.org/onepackage.php?bundleid=org.coolstar.cctools)
-
