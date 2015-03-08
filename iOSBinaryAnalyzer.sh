@@ -2,16 +2,28 @@
 
 if [[ "$1" == "" ]]
 then
-        echo ""
         echo " Usage: iOSBinaryAnalyzer.sh <binary>"
-        echo ""
+        exit 1
+fi
+
+if [[ ! -f "$1" ]]
+then
+        echo " Error: file does not exist"
+        exit 1
+fi
+
+type otool &>/dev/null
+
+if [[ "$?" -ne "0" ]]
+then
+        echo " Error: otool is not installed. Using Cydia, otool can be found in the following package: Darwin CC Tools"
         exit 1
 fi
 
 echo '   _ ____  ____  ___  _                      ___             __                '
-echo '  (_) __ \/ __/ / _ )(_)__  ___  ______ __  / _ | ___  ___ _/ /_ _____ ___ ____'
-echo ' / / /_/ /\ \  / _  / / _ \/ _ `/ __/ // / / __ |/ _ \/ _ `/ / // (_-</ -_) __/'
-echo '/_/\____/___/ /____/_/_//_/\_,_/_/  \_, / /_/ |_/_//_/\_,_/_/\_, /___/\__/_/   '
+echo '  (_) __ \/ __/ / _ )(_)__  ___ _______ __  / _ | ___  ___ _/ /_ _____ ___ ____'
+echo ' / / /_/ /\ \  / _  / / _ \/ _ `/ __/ // / / __ |/ _ \/ _ `/ / // /_ // -_) __/'
+echo '/_/\____/___/ /____/_/_//_/\_,_/_/  \_, / /_/ |_/_//_/\_,_/_/\_, //__/\__/_/   '
 echo '                                   /___/                    /___/              '
 
 echo ""
