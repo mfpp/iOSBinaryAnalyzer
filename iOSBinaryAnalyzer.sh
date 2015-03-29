@@ -41,13 +41,13 @@ echo " $entitlements"
 echo ""
 echo "==[ Binary Analysis Results ]=================================================="
 
-hds_n=$(otool -hV -arch all "$1" | grep -c "Mach header")
+archs_n=$(otool -fV "$1" | grep -c "architecture")
 
-if [[ $hds_n -gt 1 ]]
+if [[ $archs_n -gt 1 ]]
 then
-        archs=$(otool -hV -arch all "$1" | grep architecture | cut -d"(" -f2 | cut -d" " -f2 | sed 's/)://')
+        archs=$(otool -fV "$1" | grep "architecture" | cut -d" " -f2)
         echo ""
-        echo " This is a Fat binary with $hds_n architectures:" $archs
+        echo " This is a Fat binary with $archs_n architectures:" $archs
 else
         archs="all"
 fi
@@ -56,7 +56,7 @@ details=""
 
 for a in $archs
 do
-        if [[ $hds_n -gt 1 ]]
+        if [[ $archs_n -gt 1 ]]
         then
                 echo ""
                 echo "@ $a"
