@@ -1,5 +1,4 @@
-iOS Binary Analyzer
-===================
+# iOS Binary Analyzer
 
 Script to analyze an iOS binary and check which security features/measures are enabled.
 
